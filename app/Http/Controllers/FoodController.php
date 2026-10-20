@@ -51,7 +51,7 @@ class FoodController extends Controller
             'description' => $request->description,
             'image' => $imagePath,
         ]);
-        return redirect()->route('foods.index')->with('success', 'Data berhasil ditambahkan!');
+        return redirect()->route('admin.foods.index')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -89,7 +89,7 @@ class FoodController extends Controller
 
     $food->update($data);
 
-    return redirect()->route('foods.index')->with('success', 'Data berhasil diperbarui!');
+    return redirect()->route('admin.foods.index')->with('success', 'Data berhasil diperbarui!');
 }
 
     /**
@@ -99,11 +99,16 @@ class FoodController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Food $food)
     {
-        if ($Food->image && Storage::disk('public')->exists($food->image)) {
-            Storage::disk('public')->delete($food);
+        if ($food->image && Storage::disk('public')->exists($food->image)) {
+            Storage::disk('public')->delete($food->image);
         }
         $food->delete(); 
+        
+        return redirect()->route('admin.foods.index')->with('success', 'Food deleted successfully.');
     }
 }

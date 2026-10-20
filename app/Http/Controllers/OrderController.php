@@ -78,7 +78,7 @@ class OrderController extends Controller
         }
     }
     
-    public function adminDashboard(Order $order)
+    public function adminDashboard()
     {
         $orders = Order::with('orderDetails.food')->latest()->get();
         return view('dashboard', compact('orders'));

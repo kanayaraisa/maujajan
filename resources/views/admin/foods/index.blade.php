@@ -4,7 +4,7 @@
     </x-slot>
 
     <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <a href="{{ route('foods.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mb-4 inline-block font-semibold">+ Tambah Makanan</a>
+        <a href="{{ route('admin.foods.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mb-4 inline-block font-semibold">+ Tambah Makanan</a>
 
         @if(session('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 p-3 rounded mb-4">{{ session('success') }}</div>
@@ -34,8 +34,8 @@
                     <td class="p-3">{{ $food->category }}</td>
                     <td class="p-3 font-bold text-green-600">Rp {{ number_format($food->price) }}</td>
                     <td class="p-3">
-                        <a href="{{ route('foods.edit', $food->id) }}" class="text-blue-600 hover:underline mr-3 font-semibold">Edit</a>
-                        <form action="{{ route('foods.destroy', $food->id) }}" method="POST" class="inline">
+                        <a href="{{ route('admin.foods.edit', $food->id) }}" class="text-blue-600 hover:underline mr-3 font-semibold">Edit</a>
+                        <form action="{{ route('admin.foods.destroy', $food->id) }}" method="POST" class="inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" onclick="return confirm('Yakin hapus data ini?')" class="text-red-600 hover:underline font-semibold">Hapus</button>

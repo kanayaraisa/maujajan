@@ -4,7 +4,7 @@
     </x-slot>
 
     <div class="py-12 max-w-2xl mx-auto sm:px-6 lg:px-8">
-        <form action="{{ route('foods.update', $food->id) }}" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-sm border">
+        <form action="{{ route('admin.foods.update', $food->id) }}" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-sm border">
             @csrf
             @method('PUT')
             

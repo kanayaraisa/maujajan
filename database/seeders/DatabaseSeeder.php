@@ -21,8 +21,16 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin Toko',
             'email' => 'admin@gmail.com',
-            'password' => Hash::make('password123')
+            'password' => Hash::make('password123'),
+            'role' => 'admin'
         ]);
+        User::factory()->create([
+            'name' => 'User Toko',
+            'email' => 'user@gmail.com',
+            'password' => Hash::make('password123'),
+            'role' => 'customer'
+        ]);
+
 
         //  Utk panggil seeder makanan/foods
         $this->call([

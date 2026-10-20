@@ -4,7 +4,7 @@
     </x-slot>
 
     <div class="py-12 max-w-2xl mx-auto sm:px-6 lg:px-8">
-        <form action="{{ route('foods.store') }}" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-sm border">
+        <form action="{{ route('admin.foods.store') }}" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-sm border">
             @csrf
             <div class="mb-4">
                 <label class="block font-medium mb-1">Nama Makanan</label>

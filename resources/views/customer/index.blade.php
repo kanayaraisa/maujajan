@@ -8,6 +8,12 @@
 </head>
 <body class="bg-gray-100 p-6 font-sans">
     <div class="max-w-5xl mx-auto">
+        <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="bg-red-50 hover:bg-red-100 text-red-600 font-semibold px-4 py-2 rounded-lg text-sm border border-red-200 transition">
+                    Logout
+                </button>
+            </form>
         <div class="text-center mb-6">
             <h1 class="text-3xl font-bold text-gray-800">Menu Restoran</h1>
             <p class="text-gray-500 text-sm mt-1">Pilih menu makanan dan masukkan nomor meja Anda</p>
